@@ -41,7 +41,7 @@ public class gameManager : SingletonMonoBehavior<gameManager>
     /// 取得本場景所使用的AR圖片元件
     /// </summary>
     [SerializeField]
-    public ImageTargetBehaviour ARImage;
+     ImageTargetBehaviour ARImage;
     /// <summary>
     /// 取得本場景AR圖片元件下的遊戲地面
     /// </summary>
@@ -50,7 +50,7 @@ public class gameManager : SingletonMonoBehavior<gameManager>
     /// <summary>
     /// UI上的遊戲結束畫面畫布
     /// </summary>
-    public GameObject GameLoseCanvas;
+    GameObject GameLoseCanvas;
 
     [SerializeField]
     public GameObject SightingUI;
