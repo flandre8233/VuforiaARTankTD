@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class TankSpawner : MonoBehaviour
 {
+    //坦克生成器需要以下數個功能
+    //生成敵人
+    //  有序的按時生成敵人
+    //  生成敵人的位置不能亂來，需要包圍塔（中心點）來生成，故需要極坐標算法＋隨機來求得敵人生成位置
+
     /// <summary>
     /// 初始生成坦克所需秒數
     /// </summary>

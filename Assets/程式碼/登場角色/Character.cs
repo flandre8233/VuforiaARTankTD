@@ -4,6 +4,14 @@ using UnityEngine;
 
 public abstract class Character : MonoBehaviour
 {
+    //通用角色設定需要以下數個功能
+    //攻擊對方
+    //被對方攻擊
+    //死亡
+
+    /// <summary>
+    /// 當死亡時的爆炸特效
+    /// </summary>
     public GameObject ExplosionEffectObject;
 
     /// <summary>
@@ -21,10 +29,14 @@ public abstract class Character : MonoBehaviour
         HP = MaxHP;
     }
 
+    /// <summary>
+    /// 是否死亡
+    /// </summary>
     public bool isDead
     {
         get
         {
+            //生命值到0時就會死
             return (HP <= 0);
         }
     }
@@ -34,7 +46,7 @@ public abstract class Character : MonoBehaviour
     /// </summary>
     /// <param name="Target">是攻擊哪一個目標</param>
     /// <param name="Dmg">輸出多少傷害</param>
-    public void AttackedOtherCharacter(Character Target ,int Dmg)
+    public void AttackedOtherCharacter(Character Target, int Dmg)
     {
         Target.BeAttacked(Dmg);
     }
@@ -57,10 +69,13 @@ public abstract class Character : MonoBehaviour
     /// 當角色死亡時
     /// </summary>
     public abstract void OnDead();
-
+    /// <summary>
+    /// 生成爆炸特效
+    /// </summary>
     public void SpawnExpEffect()
     {
         GameObject Effect = Instantiate(ExplosionEffectObject, transform.position, Quaternion.identity);
+        //計時3
         Destroy(Effect, 3f);
     }
 }

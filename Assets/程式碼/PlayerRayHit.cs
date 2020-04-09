@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PlayerRayHit : MonoBehaviour
 {
+    //射線檢測器需要以下數個功能
+    //檢測畫面正中央有沒有打中坦克
+    //播放音效
+
+    //開火音效
     [SerializeField]
     AudioSource FireAudioSource;
     // Update is called once per frame
@@ -15,8 +20,10 @@ public class PlayerRayHit : MonoBehaviour
             return;
         }
 
+        //當按下滑鼠左鍵（GetMouseButtonDown(0)是左鍵也是手機點擊
         if (Input.GetMouseButtonDown(0))
         {
+            //因為發射子彈，所以需要有開火聲
             FireAudioSource.Play();
 
             //求得手機晝面中心點
@@ -25,9 +32,9 @@ public class PlayerRayHit : MonoBehaviour
             Vector3 CenterGamePoint = Camera.main.ScreenToWorldPoint(CenterScreenPoint);
 
             //初設射線
-            Ray ray = new Ray(CenterGamePoint, transform.forward * 100);
+            Ray ray = new Ray(CenterGamePoint, Camera.main.transform.forward * 100);
             //在Scene裡畫出一條紅線，好讓我們看到射線射在哪
-            Debug.DrawLine(CenterGamePoint, CenterGamePoint + transform.forward * 100, Color.red);
+            Debug.DrawLine(CenterGamePoint, CenterGamePoint + Camera.main.transform.forward * 100, Color.red);
 
             RaycastHit hit;
             //射線判定，結果會輸出在hit

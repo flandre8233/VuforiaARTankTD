@@ -24,7 +24,9 @@ public class gameManager : SingletonMonoBehavior<gameManager>
             return tower.transform.position;
         }
     }
-
+    /// <summary>
+    /// 遊戲是否開始了
+    /// </summary>
     public bool isGameStart = false;
 
     /// <summary>
@@ -50,8 +52,12 @@ public class gameManager : SingletonMonoBehavior<gameManager>
     /// <summary>
     /// UI上的遊戲結束畫面畫布
     /// </summary>
+    [SerializeField]
     GameObject GameLoseCanvas;
 
+    /// <summary>
+    /// 準星畫布
+    /// </summary>
     [SerializeField]
     public GameObject SightingUI;
 
@@ -70,8 +76,6 @@ public class gameManager : SingletonMonoBehavior<gameManager>
     // Update is called once per frame
     void Update()
     {
-      
-
         //如果輸掉就把遊戲結束畫面輸出
         if (IsLose)
         {

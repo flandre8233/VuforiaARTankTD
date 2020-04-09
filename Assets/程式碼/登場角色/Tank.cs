@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class Tank : Character
 {
+    //因為坦克繼承通用角色設定，所以他已經會有：攻擊對方、被對方攻擊、死亡
+    //接下來新增以下功能
+    //看著塔
+    //然後前進
+    //判定是否撞上塔
+
+
     // Update is called once per frame
     void Update()
     {
         //看著塔
-        transform.LookAt(gameManager.instance.tower.transform , Vector3.back);
+        transform.LookAt(gameManager.instance.tower.transform);
         //往看著的方向移動
         transform.position += transform.forward * Time.deltaTime;
 

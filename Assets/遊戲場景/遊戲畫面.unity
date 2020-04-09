@@ -337,6 +337,7 @@ MonoBehaviour:
   isGameStart: 0
   ARImage: {fileID: 1436686334}
   GameGround: {fileID: 1295463417}
+  GameLoseCanvas: {fileID: 1599671447}
   SightingUI: {fileID: 1609727994}
 --- !u!82 &21354598
 AudioSource:
